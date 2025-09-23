@@ -17,6 +17,7 @@ def download(url):
         #Extract file name from the downloaded image
         url_parse = urlparse(url)
         filename = os.path.basename(url_parse.path)
+
         
         #attach name if the download image  does not have a name
         if not filename:
@@ -24,7 +25,12 @@ def download(url):
            
          #save the file 
         filepath = os.path.join('Downloaded', filename)
-        
+
+        # Skip if file already exists
+        if os.path.exists(filepath):
+            print(f" Skipping {filename} (already exists)")
+            return
+            
         with open(filepath, 'wb') as f:
             f.write(response.content)
             print('fSuccessfully fetched {filename}.')
