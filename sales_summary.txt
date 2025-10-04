@@ -1,0 +1,5 @@
+Sales Analysis insights (from record of 50 dataset),
+                Total Revenue: $226167.66,
+                Best Selling Product: Furniture,
+                Highest Sale Date: 12/16/2023
+                
